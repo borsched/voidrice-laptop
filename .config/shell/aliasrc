@@ -22,6 +22,14 @@ alias \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner"
 
+# stuff
+alias \
+	config="git config --global -e" \
+	clock="tty-clock -t -c -D -C 5" \
+	s=~/school \
+	huion='xinput map-to-output' \
+	py='python main.py'
+
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
@@ -42,7 +50,8 @@ alias \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query" \
-	z="zathura"
+	z="zathura" \
+	c="clear"
 
 alias \
 	magit="nvim -c MagitOnly" \
