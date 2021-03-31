@@ -26,6 +26,8 @@ These dotfiles are intended to go with numerous suckless programs I use:
 - [dwm](https://github.com/borsched/dwm) (window manager)
 - [slstatus](https://github.com/borsched/slstatus) (statusbar)
 
+I use crontog to disable dwmblocks, and I use slstatus instead.
+
 I also recommend trying out
 [mutt-wizard](https://github.com/lukesmithxyz/mutt-wizard), which additionally
 works with this setup. It gives you an easy-to-install terminal-based email

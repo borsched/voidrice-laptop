@@ -13,7 +13,7 @@ done
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -iv" \
+	cp="cp -ivr" \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	bc="bc -ql" \
@@ -27,7 +27,7 @@ alias \
 	config="git config --global -e" \
 	clock="tty-clock -t -c -D -C 5" \
 	s=~/school \
-	huion='xinput map-to-output' \
+	huion='xinput map-to-output 24 DP-0' \
 	py='python main.py'
 
 # Colorize commands when possible.
