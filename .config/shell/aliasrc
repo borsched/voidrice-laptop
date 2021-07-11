@@ -27,8 +27,9 @@ alias \
 alias \
 	config="git config --global -e" \
 	clock="tty-clock -t -c -D -C 5" \
-	s=~/school \
-	py='python main.py'
+	py='python main.py' \
+	n='node .' \
+	formatpy='autopep8 --in-place --aggressive'
 
 # Colorize commands when possible.
 alias \
