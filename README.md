@@ -38,9 +38,17 @@ as well.
 
 Use [LARBS](https://larbs.xyz) to autoinstall everything:
 
+	curl -LO larbs.xyz/larbs.sh
+
+Change the following lines:
 ```
-curl -LO https://raw.githubusercontent.com/borsched/LARBS/master/larbs.sh
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/borsched/voidrice.git"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/borsched/LARBS/master/progs.csv"
 ```
 
-or clone the repo files directly to your home directory and install the
+Run:
+
+	sh larbs.sh
+
+- or clone the repo files directly to your home directory and install the
 [dependencies](https://github.com/borsched/LARBS/blob/master/progs.csv).
