@@ -4,6 +4,7 @@
 # These .desktop entries can also be seen and changed in ~/.local/share/applications/
 
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=lo.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=lo.desktop;
 application/vnd.oasis.opendocument.text=lo.desktop
 text/x-shellscript=text.desktop;
 x-scheme-handler/magnet=torrent.desktop;
