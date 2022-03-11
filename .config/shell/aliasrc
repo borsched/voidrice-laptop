@@ -19,8 +19,8 @@ alias \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
 	yt="ytfzf -l" \
-	ytdl="youtube-dl --add-metadata -i" \
-	yta="ytdl -x -f bestaudio/best" \
+	ytdl="yt-dlp --add-metadata -i" \
+	yta="yt-dlp -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # stuff
@@ -40,7 +40,7 @@ alias \
 
 # These common commands are just too long! Abbreviate them.
 alias \
-	ka="killall" \
+	ka="killall -9" \
 	g="git" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
@@ -55,6 +55,7 @@ alias \
 	c="clear"
 
 alias \
+	lf="lfub" \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
