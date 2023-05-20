@@ -17,10 +17,10 @@ xrandr --output DP-0 --primary --mode 1920x1080 --rate 165 --output DVI-D-0 --mo
 feh --bg-fill --randomize ~/.local/share/wallpapers/*	# set bg
 xcompmgr &		# xcompmgr for transparency
 
-autostart="mpd xcompmgr dunst unclutter pipewire"
+autostart="mpd xcompmgr dunst unclutter pipewire remapd"
 
 for program in $autostart; do
-	pidof -s "$program" || setsid -f "$program"
+	pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE.
