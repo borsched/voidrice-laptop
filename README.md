@@ -38,9 +38,11 @@ as well.
 
 Use [LARBS](https://larbs.xyz) to autoinstall everything:
 
-	curl -LO larbs.xyz/larbs.sh
+```
+curl -LO larbs.xyz/larbs.sh
+```
 
-Change the following lines:
+Change the following lines in `larbs.sh`:
 ```
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/borsched/voidrice.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/borsched/LARBS/master/progs.csv"
@@ -50,7 +52,7 @@ Run:
 
 	sh larbs.sh
 
-- or clone the repo files directly to your home directory and install the
+or clone the repo files directly to your home directory and install the
 [dependencies](https://github.com/borsched/LARBS/blob/master/progs.csv).
 
 ## Default Desktop Artwork
