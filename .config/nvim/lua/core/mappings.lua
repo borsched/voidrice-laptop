@@ -26,6 +26,15 @@ M.general = {
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
+    -- quit
+    ["<C-q>"] = { "<cmd> q! <CR>", "Quit" },
+
+    -- compile
+    ["<leader>cc"] = { "<cmd> w! | !compiler \"%:p\"<CR>", "Compile document" },
+
+    -- preview
+    ["<leader>pp"] = { "<cmd> !opout \"%:p\"<CR>", "Preview document" },
+
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
@@ -371,7 +380,7 @@ M.whichkey = {
 M.blankline = {
   plugin = true,
 
-  n = {
+  --[[n = {
     ["<leader>cc"] = {
       function()
         local ok, start = require("indent_blankline.utils").get_current_context(
@@ -381,13 +390,15 @@ M.blankline = {
 
         if ok then
           vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
-          vim.cmd [[normal! _]]
-        end
+--]]
+--[[      vim.cmd [[normal! _]]
+--[[        end
       end,
 
       "Jump to current context",
     },
   },
+--]]
 }
 
 M.gitsigns = {
