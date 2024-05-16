@@ -15,21 +15,15 @@ cpu() {
   printf "^c$green^ $cpu_val"
 }
 
-pkg_updates() {
-  #updates=$({ timeout 20 doas xbps-install -un 2>/dev/null || true; } | wc -l) # void
-  updates=$({ timeout 20 checkupdates 2>/dev/null || true; } | wc -l) # arch
-  # updates=$({ timeout 20 aptitude search '~U' 2>/dev/null || true; } | wc -l)  # apt (ubuntu, debian etc)
-
-  if [ -z "$updates" ]; then
-    printf "  ^c$green^    Fully Updated"
-  else
-    printf "  ^c$green^    $updates"" updates"
-  fi
-}
-
 battery() {
+  printf "^b$black^  " # adds spaces in the front so the battery icon doesn't get covered
   get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
-  printf "^c$blue^   $get_capacity"
+
+	case "$(cat /sys/class/power_supply/BAT0/status 2>/dev/null)" in
+	Discharging) printf "^c$blue^   $get_capacity" ;;
+	Charging) printf "^c$blue^ 󱐋  $get_capacity" ;;
+	Full) printf "^c$blue^   $get_capacity" ;;
+  esac
 }
 
 brightness() {
@@ -50,14 +44,16 @@ wlan() {
 }
 
 clock() {
+	printf "^c$black^ ^b$green^  "
+	printf "^c$green^^b$black^ $(date '+%a %b %d') "
 	printf "^c$black^ ^b$darkblue^ 󱑆 "
 	printf "^c$black^^b$blue^ $(date '+%H:%M')  "
 }
 
 while true; do
 
-  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
+  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ]
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  sleep 1 && xsetroot -name "$(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
 done
